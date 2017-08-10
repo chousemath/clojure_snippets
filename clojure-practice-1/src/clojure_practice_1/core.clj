@@ -11,4 +11,10 @@
   (println (+ 1 2 3))
   (println "The value below should be 24")
   (println (* 2 3 4))
-)
+  (do (println "This is a combined call!")
+      (println (+ 10 10 12)))
+
+  (do (println "This is another combined call with more elements!")
+      (println "\t 1. Element 1")
+      (println "\t 2. Element 2")
+      (println "\t 3. Element 3")))
