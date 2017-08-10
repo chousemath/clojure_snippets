@@ -55,4 +55,18 @@
   (println "The value printed directly below should be `false`")
   (println (and "jaeho" false "hadouken"))
   (println "5 should be printed below")
-  (println (and 1 2 3 4 5)))
+  (println (and 1 2 3 4 5))
+  ; you use def to bind values in Clojure
+  (def my-name
+    ["Joseph Sungpil Choi"])
+  (println (str "Hi there! My name is " (first my-name)))
+  (def ages
+    [27 13 89 99])
+  (println (str "The very last age should be " (last ages)))
+
+  ; please note that it is now `defn` NOT `def`
+  (defn greeting
+    [name]
+    (str "Hi there " name))
+
+  (println (greeting "Joseph Choi")))
