@@ -69,4 +69,30 @@
     [name]
     (str "Hi there " name))
 
-  (println (greeting "Joseph Choi")))
+  (println (greeting "Joseph Choi"))
+
+  (defn greetings
+    [greeting-number]
+    (case greeting-number
+      1 "Aloha there!"
+      2 "Hey there sexy"
+      3 "Wazzuuuuup"
+      "Greetings ^^"))
+
+  (println (greetings 1))
+  (println (greetings 2))
+  (println (greetings 3))
+  (println (greetings 999))
+
+  (println 1/5)
+
+  ; Clojure only allows double quotes for strings
+  (defn add-noise
+    [phrase]
+    (str phrase " ASLDFJASDLFKAJSDF"))
+
+  (println (add-noise "Hey you..."))
+  (println (str "printing an " "empty map"))
+  (println {})
+  (println (str "Now printing some maps" " with keywords" "..."))
+  (println {:first-name "Joseph" :middle-name "Sungpil" :last-name "Choi"}))
