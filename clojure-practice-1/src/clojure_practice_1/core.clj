@@ -95,4 +95,10 @@
   (println (str "printing an " "empty map"))
   (println {})
   (println (str "Now printing some maps" " with keywords" "..."))
-  (println {:first-name "Joseph" :middle-name "Sungpil" :last-name "Choi"}))
+  (println {:first-name "Joseph" :middle-name "Sungpil" :last-name "Choi"})
+  (println {:plus + :minus - :multiply *})
+  ; here is an example of some nested maps
+  (println {:first-map {:element-1 "yo!" :element-2 "lo!"} :second-map {:element-1 "potato"}})
+  (println {:dogs {:first "Retriever" :second "Poodle"} :cats {:first "Siamese" :second "Tiger"}})
+  (println (hash-map :first "Joseph" :middle "Sungpil" :last "Choi"))
+  (println (hash-map :dogs (hash-map :first "woof" :second "bark!"))))
