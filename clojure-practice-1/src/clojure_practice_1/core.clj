@@ -101,4 +101,28 @@
   (println {:first-map {:element-1 "yo!" :element-2 "lo!"} :second-map {:element-1 "potato"}})
   (println {:dogs {:first "Retriever" :second "Poodle"} :cats {:first "Siamese" :second "Tiger"}})
   (println (hash-map :first "Joseph" :middle "Sungpil" :last "Choi"))
-  (println (hash-map :dogs (hash-map :first "woof" :second "bark!"))))
+  (println (hash-map :dogs (hash-map :first "woof" :second "bark!")))
+  (println 'H')
+  ; an example of a Clojure vector, you can print a vector, but not a list
+  (println [1 2 3])
+  (defn hello-world [name]
+    (println (str "Hello world...and " name)))
+  (hello-world "Joseph")
+  ; namespaces in Clojure are mutable!
+  (if (= 15 (* 3 5))
+    (do
+      (println "OMG you got 15!!!")
+      (println (str "I am so happy for " (get (hash-map :first "you" :second "him") :first))))
+    (println "This is a sad day..."))
+  (loop [i 0]
+    (if (< i 11)
+      (do
+        (println (str "The value of i is " i))
+        (recur (inc i)))))
+  (defn country-info
+    [country-name]
+    (get {:usa {:name "United States of America"
+                :capital "Washington D.C."}
+          :rok {:name "Republic of Korea"
+                :capital "Seoul"}} country-name "Not sure..."))
+  (println (country-info :rok)))
