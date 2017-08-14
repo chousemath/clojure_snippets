@@ -108,4 +108,9 @@
   (println (str "My last name is " (get my-map-1 :last)))
   (println (str "My full name is " (get my-map-1 :first) " " (get my-map-1 :middle) " " (get my-map-1 :last)))
   (println (get my-map-1 :second "Default Name: Bob!"))
-  (println (get-in {:a "yolo" :b {:a "bro" :b "hadouken"}} [:b :b])))
+  (println (get-in {:a "yolo" :b {:a "bro" :b "hadouken"}} [:b :b]))
+  (println (str "You can also treat maps like " ({:a "functions" :b "variables"} :a)))
+  (println (:y (:x {:x {:y "oh yeah!" :t "spam"} :n "Spanky!"})))
+  (println (str "The zeroeth value of the vector is "(get [44 33 22] 0)))
+  ; vectors can be of mixed types!
+  (println (str "I was looking for `Hadouken!` => " (:a (get ["bla" {:a "Hadouken!" :b "yo"} 1] 1)))))
