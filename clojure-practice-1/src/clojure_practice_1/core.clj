@@ -146,4 +146,11 @@
   (def my-first-hash-set #{"joseph choi" 27 1990})
   (println my-first-hash-set)
   ; here is another hash set
-  (println (hash-set 1 2 "hello world" `(1 2 3 4 5))))
+  ; interesting, it seems like ordering on creation is not respected
+  (println (hash-set 1 2 "hello world" `(1 2 3 4 5)))
+  ; hash-sets maintain only unique values
+  (println (hash-set 1 1 1 1 1 1 1 1 1 1 2))
+  (println (conj (conj #{:a :b} :b) :a))
+  (if (contains? #{1 2 3 4 5} 5)
+    (println "The hash-set contains the value 5!")
+    (println "The hash-set does not have 5 in it...")))
