@@ -153,4 +153,10 @@
   (println (conj (conj #{:a :b} :b) :a))
   (if (contains? #{1 2 3 4 5} 5)
     (println "The hash-set contains the value 5!")
-    (println "The hash-set does not have 5 in it...")))
+    (println "The hash-set does not have 5 in it..."))
+  (println (str "Here is another example of " "string concatenation"))
+  ; you can use the class method to identify the class of an object
+  (println (str "The class of 1 is " (class 1)))
+  (println (str "The class of 1.0 is " (class 1.0)))
+  (println (str "The class of an empty string is " (class "")))
+  (println (str "The class of a populated string is " (class "Hello World!"))))
