@@ -102,6 +102,7 @@
   (println {:dogs {:first "Retriever" :second "Poodle"} :cats {:first "Siamese" :second "Tiger"}})
   (println (hash-map :first "Joseph" :middle "Sungpil" :last "Choi"))
   (println (hash-map :dogs (hash-map :first "woof" :second "bark!")))
+<<<<<<< HEAD
   (println 'H')
   ; an example of a Clojure vector, you can print a vector, but not a list
   (println [1 2 3])
@@ -126,3 +127,57 @@
           :rok {:name "Republic of Korea"
                 :capital "Seoul"}} country-name "Not sure..."))
   (println (country-info :rok)))
+=======
+  (def my-map-1 {:first "Joseph" :middle "Sungpil" :last "Choi"})
+  (println (str "My first name is " (get my-map-1 :first)))
+  (println (str "My middle name is " (get my-map-1 :middle)))
+  (println (str "My last name is " (get my-map-1 :last)))
+  (println (str "My full name is " (get my-map-1 :first) " " (get my-map-1 :middle) " " (get my-map-1 :last)))
+  (println (get my-map-1 :second "Default Name: Bob!"))
+  (println (get-in {:a "yolo" :b {:a "bro" :b "hadouken"}} [:b :b]))
+  (println (str "You can also treat maps like " ({:a "functions" :b "variables"} :a)))
+  (println (:y (:x {:x {:y "oh yeah!" :t "spam"} :n "Spanky!"})))
+  (println (str "The zeroeth value of the vector is "(get [44 33 22] 0)))
+  ; vectors can be of mixed types!
+  (println (str "I was looking for `Hadouken!` => " (:a (get ["bla" {:a "Hadouken!" :b "yo"} 1] 1))))
+  ; let's create some vectors
+  (def my-vector (vector "my " "name " "is " "jo!"))
+  (println (str (get my-vector 0) (get my-vector 1) (get my-vector 2) (get my-vector 3)))
+  (def a-vector [1 2 3 4 5])
+  (def a-new-vector (conj a-vector 6))
+  (println a-new-vector)
+  (def a-newer-vector (conj (conj (conj a-new-vector 7) 8) 9))
+  (println a-newer-vector)
+  ; here is how you generate a list literal
+  (def my-new-list `(1 2 3 4 5 6 7))
+  (println my-new-list)
+  (println (str "The first value of my new list is " (nth my-new-list 0)))
+  (println (str "Here is the second value of another list " (nth `(77 66 55) 1)))
+  ; in general, the nth operator is slower than the get operator
+  ; list values can have literally any type, even other lists!
+  (println `(list 1 "hello" `(1 2 "hello world" "goodbye!")))
+  ; you add elements to the beginning of a clojure list
+  ; make sure you define your list as a list literal when assigning to a variable?
+  (def list-conj-example-1 `(1 2 3 4 5 6 7))
+  (println (conj list-conj-example-1 999))
+  ; if you need to easily add items to the beginning of a collection, use a list over a vector
+  (def another-list `("this" "is" "a" "list"))
+  (println (conj another-list "Oh my god..."))
+  ; otherwise, you should probably be using a vector
+  (def another-vector ["Wow" "a" "freaking"])
+  (println (conj another-vector "vector!!!!"))
+
+  ; Clojure Hash Sets
+  ; clojurists tend to use hash sets more than sorted sets...
+  (def my-first-hash-set #{"joseph choi" 27 1990})
+  (println my-first-hash-set)
+  ; here is another hash set
+  ; interesting, it seems like ordering on creation is not respected
+  (println (hash-set 1 2 "hello world" `(1 2 3 4 5)))
+  ; hash-sets maintain only unique values
+  (println (hash-set 1 1 1 1 1 1 1 1 1 1 2))
+  (println (conj (conj #{:a :b} :b) :a))
+  (if (contains? #{1 2 3 4 5} 5)
+    (println "The hash-set contains the value 5!")
+    (println "The hash-set does not have 5 in it...")))
+>>>>>>> 1a046ca0887834a5a211ddb7e6ab4c9caada98f9
